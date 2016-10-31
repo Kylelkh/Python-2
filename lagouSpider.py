@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+#正常爬取拉勾数据，由于编码问题，可能出现字符显示乱码。
 import requests
 from openpyxl import Workbook
 
@@ -9,7 +11,7 @@ def get_json(url, page, lang_name):
     for i in list_con:
         info = []
         info.append(i['companyShortName'])
-        info.append(i['companyName'])
+        #info.append(i['companyName'])
         info.append(i['salary'])
         info.append(i['city'])
         info.append(i['education'])
@@ -18,7 +20,7 @@ def get_json(url, page, lang_name):
 
 
 def main():
-    lang_name = input('职位名：')
+    lang_name = raw_input("Press the enter the job name:")
     page = 1
     url = 'http://www.lagou.com/jobs/positionAjax.json?needAddtionalResult=false'
     info_result = []
@@ -31,7 +33,8 @@ def main():
     ws1.title = lang_name
     for row in info_result:
         ws1.append(row)
-    wb.save('职位信息.xlsx')
+        filename = "job_info_about_"+lang_name+".xlsx"
+    wb.save(filename)
 
 if __name__ == '__main__':
     main()
