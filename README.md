@@ -17,4 +17,4 @@
 
 8.[读写excel](https://github.com/Kylelkh/Python-2/blob/master/readExcel.py)
 
-另外，如果使用上有问题，可以查看wiki文档，我会根据自己遇到的问题并且将注意事项在wiki中说明。
+另外，如果使用上有问题，可以查看wiki文档，我会根据自己遇到的问题并且将注意事项在wiki中说明。在此特别感谢injetlee。
